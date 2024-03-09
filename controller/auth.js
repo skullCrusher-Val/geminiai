@@ -88,9 +88,9 @@ export const googleOauthHandler = (req, res, next) => {
       };
 
       if (applicationType === "production") {
-        accessCookieOption.secure = true;
+        accessCookieOption.secure = false;
         accessCookieOption.sameSite = "None";
-        refreshCookieOption.secure = true;
+        refreshCookieOption.secure = false;
         refreshCookieOption.sameSite = "None";
       }
 

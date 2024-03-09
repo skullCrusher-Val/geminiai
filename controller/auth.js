@@ -77,17 +77,17 @@ export const googleOauthHandler = (req, res, next) => {
 
       const accessCookieOption = {
         maxAge: 900000,
-        // httpOnly: true,
-        // domain: cookieDomain,
+        httpOnly: true,
+        domain: cookieDomain,
       };
 
       const refreshCookieOption = {
         maxAge: 604800000,
-        // httpOnly: true,
-        // domain: cookieDomain,
+        httpOnly: true,
+        domain: cookieDomain,
       };
 
-      if (applicationType === "productionsd") {
+      if (applicationType === "production") {
         accessCookieOption.secure = true;
         accessCookieOption.sameSite = "None";
         refreshCookieOption.secure = true;

@@ -89,9 +89,9 @@ export const googleOauthHandler = (req, res, next) => {
 
       if (applicationType === "production") {
         accessCookieOption.secure = true;
-        accessCookieOption.sameSite = "Lex";
+        accessCookieOption.sameSite = "Lax";
         refreshCookieOption.secure = true;
-        refreshCookieOption.sameSite = "Lex";
+        refreshCookieOption.sameSite = "Lax";
       }
 
       res.cookie("access_token", accessToken, accessCookieOption);
@@ -173,9 +173,9 @@ export const logoutHandler = (req, res, next) => {
 
       if (applicationType === "production") {
         accessCookieOption.secure = true;
-        accessCookieOption.sameSite = "Lex";
+        accessCookieOption.sameSite = "Lax";
         refreshCookieOption.secure = true;
-        refreshCookieOption.sameSite = "Lex";
+        refreshCookieOption.sameSite = "Lax";
       }
 
       res.clearCookie("access_token", accessCookieOption);
@@ -265,7 +265,7 @@ export const refreshToken = (req, res, next) => {
       };
       if (applicationType === "production") {
         accessCookieOption.secure = true;
-        accessCookieOption.sameSite = "Lex";
+        accessCookieOption.sameSite = "Lax";
       }
       res.cookie("access_token", newAccessToken, accessCookieOption);
       res.cookie("isLogin", "yes", accessCookieOption);

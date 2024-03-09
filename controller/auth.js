@@ -114,7 +114,7 @@ export const loginValidation = (req, res, next) => {
   if (!token) {
     const err = new Error("Invalid Token");
     err.statusCode = 401;
-    next(err);
+    throw err;
   }
 
   a += 1;

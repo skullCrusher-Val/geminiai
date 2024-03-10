@@ -83,14 +83,13 @@ export const googleOauthHandler = (req, res, next) => {
 
       const refreshCookieOption = {
         maxAge: 604800000,
-        httpOnly: true,
         domain: cookieDomain,
       };
 
       if (applicationType === "production") {
-        accessCookieOption.secure = false;
+        accessCookieOption.secure = true;
         accessCookieOption.sameSite = "None";
-        refreshCookieOption.secure = false;
+        refreshCookieOption.secure = true;
         refreshCookieOption.sameSite = "None";
       }
 

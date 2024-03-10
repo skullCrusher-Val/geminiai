@@ -77,7 +77,6 @@ export const googleOauthHandler = (req, res, next) => {
 
       const accessCookieOption = {
         maxAge: 900000,
-        httpOnly: true,
         domain: cookieDomain,
       };
 

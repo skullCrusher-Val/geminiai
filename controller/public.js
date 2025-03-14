@@ -52,7 +52,7 @@ export const postGemini = async (req, res, next) => {
 
   const genAi = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-  const model = genAi.getGenerativeModel({ model: "gemini-pro" });
+  const model = genAi.getGenerativeModel({ model: "gemini-2.0-flash" });
 
   const chats = model.startChat({
     history: history,
